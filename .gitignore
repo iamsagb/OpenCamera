@@ -1,0 +1,28 @@
+# macOS Finder metadata
+.DS_Store
+
+# Swift Package Manager build artifacts
+/.build
+/Packages
+
+# Xcode user data
+xcuserdata/
+DerivedData/
+
+# SwiftPM configuration and workspace settings
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
+# Personal credentials
+.netrc
+
+# Xcode project-related
+*.xcuserstate
+*.xcscmblueprint
+
+# Logs
+*.log
+
+# Other metadata
+*.xcodesamplecode.plist
+*.moved-aside
