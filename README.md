@@ -1,6 +1,3 @@
-Here's a sample README for your "OpenCamera" Swift Package:
-
----
 
 # OpenCamera
 
