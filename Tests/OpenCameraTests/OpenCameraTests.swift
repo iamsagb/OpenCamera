@@ -2,11 +2,29 @@ import XCTest
 @testable import OpenCamera
 
 final class OpenCameraTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
+    func testVersion() {
+        XCTAssertFalse(OpenCamera.version.isEmpty)
+    }
 
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    func testDefaultPhotoConfiguration() {
+        let config = CameraConfiguration.defaultPhoto
+        XCTAssertEqual(config.mode, .photo)
+        XCTAssertEqual(config.position, .back)
+    }
+
+    func testDefaultVideoConfiguration() {
+        let config = CameraConfiguration.defaultVideo
+        XCTAssertEqual(config.mode, .video)
+    }
+
+    func testBuiltInFiltersIncludePassthrough() {
+        XCTAssertTrue(BuiltInFilters.all.contains(where: { $0.name == "None" }))
+    }
+
+    func testMakeSessionReturnsSession() {
+        let session = OpenCamera.makeSession()
+        XCTAssertNotNil(session)
+        XCTAssertFalse(session.isRunning)
     }
 }
+
